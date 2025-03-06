@@ -43,7 +43,7 @@ public class Library {
         }
     }
 
-    public void sort() {
+    public void sortAlphabet() {
         media_library.sort(new MediaComparer()); // thank you Tony
     }
 

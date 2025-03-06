@@ -5,7 +5,7 @@ public class Main {
             Library librarby = new Library();
             librarby.addItem("Bmong Us");
             librarby.addItem("Among Us 2");
-            librarby.sort();
+            librarby.sortAlphabet();
             System.out.println(librarby.toString());
 
             running = false;
