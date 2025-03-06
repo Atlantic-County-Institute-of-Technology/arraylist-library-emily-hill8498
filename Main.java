@@ -6,7 +6,7 @@ public class Main {
             librarby.addItem("Among Us");
             librarby.addItem("Among Us 2");
             librarby.removeItem("Among Us");
-            System.out.println(librarby.popTopItem().name);
+            System.out.println(librarby.popTopItem().getName());
 
             running = false;
         }

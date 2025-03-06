@@ -1,6 +1,15 @@
+// media class because we may want to store more data about a media piece than just it's name
 public class Media {
-    String name;
+    private String name;
     public Media(String name) {
+        this.name = name;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
         this.name = name;
     }
 }

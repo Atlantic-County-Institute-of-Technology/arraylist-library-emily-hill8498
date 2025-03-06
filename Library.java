@@ -43,12 +43,12 @@ public class Library {
         }
     }
 
-    private int indexOf(String item_name) {
+    private int indexOf(String item_name) { //need this function to look up index by name
         for (int i = 0; i < media_library.size(); i++) {
-            if (media_library.get(i).name.equals(item_name)) {
+            if (media_library.get(i).getName().equals(item_name)) {
                 return i;
             }
         }
-        return -1;
+        return -1; // return -1 if item not found
     }
 }
