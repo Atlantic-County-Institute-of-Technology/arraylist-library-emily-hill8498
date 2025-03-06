@@ -43,6 +43,15 @@ public class Library {
         }
     }
 
+    public void sort() {
+        media_library.sort(new MediaComparer()); // thank you Tony
+    }
+
+    @Override
+    public String toString() {
+        return media_library.toString();
+    }
+
     private int indexOf(String item_name) { //need this function to look up index by name
         for (int i = 0; i < media_library.size(); i++) {
             if (media_library.get(i).getName().equals(item_name)) {

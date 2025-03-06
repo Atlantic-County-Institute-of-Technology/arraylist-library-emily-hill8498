@@ -5,6 +5,11 @@ public class Media {
         this.name = name;
     }
 
+    @Override
+    public String toString() {
+        return getName();
+    }
+
     public String getName() {
         return name;
     }

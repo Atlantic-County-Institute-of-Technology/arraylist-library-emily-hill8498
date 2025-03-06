@@ -3,10 +3,10 @@ public class Main {
         boolean running = true;
         while (running) {
             Library librarby = new Library();
-            librarby.addItem("Among Us");
+            librarby.addItem("Bmong Us");
             librarby.addItem("Among Us 2");
-            librarby.removeItem("Among Us");
-            System.out.println(librarby.popTopItem().getName());
+            librarby.sort();
+            System.out.println(librarby.toString());
 
             running = false;
         }
