@@ -2,7 +2,7 @@ import java.util.ArrayList;
 import java.util.Random;
 
 public class Library {
-    ArrayList<Media> media_library = new ArrayList<Media>();
+    private ArrayList<Media> media_library = new ArrayList<Media>();
 
     public Library() {
         return;
@@ -45,6 +45,10 @@ public class Library {
 
     public void sortAlphabet() {
         media_library.sort(new MediaComparer()); // thank you Tony
+    }
+
+    public boolean hasMedia() {
+        return !media_library.isEmpty();
     }
 
     @Override
