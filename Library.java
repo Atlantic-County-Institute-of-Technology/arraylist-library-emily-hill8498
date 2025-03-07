@@ -26,7 +26,7 @@ public class Library {
     }
 
     public Media popTopItem() {
-        if (!hasMedia()) return null;
+        if (!hasMedia()) return null; // this line appears a few times and prevents crashes on empty libraries
         Media item = media_library.getFirst();
         media_library.removeFirst();
         return item;
@@ -38,7 +38,7 @@ public class Library {
     }
 
     public void shuffle() {
-        if (!hasMedia()) return;
+        if (!hasMedia()) return; // this function in fact copy-pasted into third project
         Random rand = new Random();         // modern fisher-yates implemented from wikipedia (https://en.wikipedia.org/wiki/Fisher%E2%80%93Yates_shuffle#The_modern_algorithm)
         for (int i=media_library.size()-1; i>0; i--) {
             int randIndex = rand.nextInt(i);
@@ -59,7 +59,7 @@ public class Library {
 
     @Override
     public String toString() {
-        return media_library.toString();
+        return media_library.toString(); // helpfully, this calls toString on all items
     }
 
     public int indexOf(String item_name) { //need this function to look up index by name

@@ -17,7 +17,7 @@ public class Main {
             switch (choice) {
                 case 1 -> {
                     Media item = library.popTopItem();
-                    if (item == null) {
+                    if (item == null) { //this prevents crashes on empty libraries
                         System.out.println("Library is empty! Add some media.");
                         break;
                     }
@@ -46,7 +46,7 @@ public class Main {
                     else System.out.println("Item removed.");
                 }
                 case 5 -> {
-                    if (library.hasMedia()) {
+                    if (library.hasMedia()) {   // this doesn't crash on an empty library, but I still want to give feedback
                       library.sortAlphabet();
                       System.out.println("Library sorted.");
                       break;
@@ -54,7 +54,7 @@ public class Main {
                     System.out.println("Library is empty! Add some media.");
                 }
                 case 6 -> {
-                    if (library.hasMedia()) {
+                    if (library.hasMedia()) { // ditto
                         library.shuffle();
                         System.out.println("Library shuffled.");
                         break;
@@ -62,7 +62,7 @@ public class Main {
                 System.out.println("Library is empty! Add some media.");
                 }
                 case 7 -> {
-                    if (!library.hasMedia()) {
+                    if (!library.hasMedia()) { // ditto ditto
                         System.out.println("Library is empty! Add some media.");
                         break;
                     }
