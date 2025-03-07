@@ -39,6 +39,38 @@ public class Main {
                     library.addItem(name);
                     System.out.println("Added " + name);
                 }
+                case 4 -> {
+                    System.out.print("Media Name: ");
+                    String name = new Scanner(System.in).nextLine();
+                    if (!library.removeItem(name)) System.out.println("Item not found.");
+                    else System.out.println("Item removed.");
+                }
+                case 5 -> {
+                    if (library.hasMedia()) {
+                      library.sortAlphabet();
+                      System.out.println("Library sorted.");
+                      break;
+                    }
+                    System.out.println("Library is empty! Add some media.");
+                }
+                case 6 -> {
+                    if (library.hasMedia()) {
+                        library.shuffle();
+                        System.out.println("Library shuffled.");
+                        break;
+                    }
+                System.out.println("Library is empty! Add some media.");
+                }
+                case 7 -> {
+                    if (!library.hasMedia()) {
+                        System.out.println("Library is empty! Add some media.");
+                        break;
+                    }
+                    String name = new Scanner(System.in).nextLine();
+                    int index = library.indexOf(name);
+                    if (index == -1) System.out.println("Item not found.");
+                    else System.out.println("Position in queue: " + (index+1));
+                }
                 case 0 -> running = false;
             }
 

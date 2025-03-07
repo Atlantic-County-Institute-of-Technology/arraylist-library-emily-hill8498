@@ -16,11 +16,13 @@ public class Library {
         media_library.addLast(new Media(item));
     }
 
-    public void removeItem(String item) {
+    public boolean removeItem(String item) {
         int index = indexOf(item);
         if (index >= 0) {
             media_library.remove(index);
+            return true;
         }
+        return false;
     }
 
     public Media popTopItem() {
