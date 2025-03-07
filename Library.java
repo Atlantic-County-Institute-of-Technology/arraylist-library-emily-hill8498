@@ -24,16 +24,19 @@ public class Library {
     }
 
     public Media popTopItem() {
+        if (!hasMedia()) return null;
         Media item = media_library.getFirst();
         media_library.removeFirst();
         return item;
     }
 
     public Media readTopItem() {
+        if (!hasMedia()) return null;
         return media_library.getFirst();
     }
 
     public void shuffle() {
+        if (!hasMedia()) return;
         Random rand = new Random();         // modern fisher-yates implemented from wikipedia (https://en.wikipedia.org/wiki/Fisher%E2%80%93Yates_shuffle#The_modern_algorithm)
         for (int i=media_library.size()-1; i>0; i--) {
             int randIndex = rand.nextInt(i);
@@ -44,6 +47,7 @@ public class Library {
     }
 
     public void sortAlphabet() {
+        if (!hasMedia()) return;
         media_library.sort(new MediaComparer()); // thank you Tony
     }
 

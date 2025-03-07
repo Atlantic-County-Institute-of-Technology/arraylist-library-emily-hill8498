@@ -13,8 +13,23 @@ public class Main {
                 } catch (Exception e) {
                     choice = -1;
                 }
-                running = false;
             }
+            switch (choice) {
+                case 1 -> {
+                    System.out.print("Now playing: ");
+                    System.out.println(library.popTopItem().getName());
+                }
+                case 2 -> {
+                    System.out.print("Skipped ");
+                    System.out.println(library.popTopItem().getName());
+                }
+                case 3 -> {
+                    String name = new Scanner(System.in).next();
+                    library.addItem(name);
+                }
+                case 0 -> running = false;
+            }
+
         }
     }
 }
