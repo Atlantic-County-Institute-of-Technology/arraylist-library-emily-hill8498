@@ -16,16 +16,28 @@ public class Main {
             }
             switch (choice) {
                 case 1 -> {
+                    Media item = library.popTopItem();
+                    if (item == null) {
+                        System.out.println("Library is empty! Add some media.");
+                        break;
+                    }
                     System.out.print("Now playing: ");
-                    System.out.println(library.popTopItem().getName());
+                    System.out.println(item.getName());
                 }
                 case 2 -> {
+                    Media item = library.popTopItem();
+                    if (item == null) {
+                        System.out.println("Library is empty! Add some media.");
+                        break;
+                    }
                     System.out.print("Skipped ");
-                    System.out.println(library.popTopItem().getName());
+                    System.out.println(item.getName());
                 }
                 case 3 -> {
-                    String name = new Scanner(System.in).next();
+                    System.out.print("Media Name: ");
+                    String name = new Scanner(System.in).nextLine();
                     library.addItem(name);
+                    System.out.println("Added " + name);
                 }
                 case 0 -> running = false;
             }
